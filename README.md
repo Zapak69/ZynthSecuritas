@@ -22,9 +22,9 @@ This command will:
 git clone https://github.com/Zapak69/ZynthSecuritas.git
 ```
 
-2. Install python and requirements from [req.txt](https://raw.githubusercontent.com/Zapak69/ZynthSecuritas/refs/heads/main/req.txt)
+2. Install [python](https://www.python.org/downloads/) and requirements from [req.txt](https://raw.githubusercontent.com/Zapak69/ZynthSecuritas/refs/heads/main/req.txt)
 
-3. Follow the steps in INSTALL GUIDE.txt.
+3. Follow the steps in [INSTALL GUIDE.txt](https://raw.githubusercontent.com/Zapak69/ZynthSecuritas/refs/heads/main/INSTALL%20GUIDE.txt).
 
 ## ⚠️ Warning
 This tool is intended for advanced users – make sure you understand what each script does before running it.
