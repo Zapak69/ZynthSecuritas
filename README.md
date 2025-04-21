@@ -6,7 +6,7 @@
 
 Once installed, ZynthSecuritas runs at system startup and sends a notification to a specified Discord channel that the PC has been turned on.
 
-> You can remotely lock the system using the Discord bot command:
+You can remotely lock the system using the Discord bot command:
 `/lock (username)`
 
 This command will:
