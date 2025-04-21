@@ -1,0 +1,11 @@
+Hello and thank you for purchasing our security program!
+
+Do not forget to set these things in "security.pyw"
+Replace: "YOUR_TOKEN_HERE" with your bot token
+Replace: "YOUR_CHANNEL_ID_HERE" with your channel id
+Replace: "YOUR_ID_HERE" with your user id
+
+If you did this then paste "security.pyw" and "check.bat" into start up folder (to get here, press win+r and type "shell:startup")
+After that open "encrypt.exe" and generate your recovery password after generation complete you will get random numbers and letters
+copy that, and open "security.bat" in text editor. Replace "YOUR_KEY" with your generated key you copied.  If you done that save
+the file and copy it into C:\ folder. Then Done!
