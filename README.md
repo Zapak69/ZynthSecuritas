@@ -4,15 +4,15 @@
 
 ## 🔒 How it works
 
-Once installed, ZynthSecuritas runs at system startup and sends a notification to a specified Discord channel that the PC has been turned on.
+> Once installed, ZynthSecuritas runs at system startup and sends a notification to a specified Discord channel that the PC has been turned on.
 
-You can remotely lock the system using the Discord bot command:
-/lock (username)
+> You can remotely lock the system using the Discord bot command:
+`/lock (username)`
 
 This command will:
-- Immediately terminate foreground apps (like Discord, browsers, or games)
-- Block access to Task Manager
-- Require a password to unlock the system (encrypted with a custom method)
+> - Immediately terminate foreground apps (like Discord, browsers, or games)
+> - Block access to Task Manager
+> - Require a password to unlock the system (encrypted with a custom method)
 
 ## 🛠️ Installation
 
@@ -25,9 +25,5 @@ git clone https://github.com/Zapak69/ZynthSecuritas.git
 2. Follow the steps in INSTALL GUIDE.txt.
 
 ## ⚠️ Warning
-This tool is intended for advanced users – make sure you understand what each script does before running it.
-
-Use at your own risk and always back up your data.
-
-📄 License
-This project is open-source.
+> This tool is intended for advanced users – make sure you understand what each script does before running it.
+> Use at your own risk and always back up your data.
