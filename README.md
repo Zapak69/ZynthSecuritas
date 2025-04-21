@@ -20,3 +20,14 @@ This command will:
 
 ```bash
 git clone https://github.com/Zapak69/ZynthSecuritas.git
+```
+
+2. Follow the steps in INSTALL GUIDE.txt.
+
+## ⚠️ Warning
+This tool is intended for advanced users – make sure you understand what each script does before running it.
+
+Use at your own risk and always back up your data.
+
+📄 License
+This project is open-source.
