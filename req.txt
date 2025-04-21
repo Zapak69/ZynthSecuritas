@@ -1,0 +1,3 @@
+Python requirements (use pip install):
+- discord
+- datetime
