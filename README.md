@@ -7,6 +7,7 @@
 Once installed, ZynthSecuritas runs at system startup and sends a notification to a specified Discord channel that the PC has been turned on.
 
 Command list:
+
 `/lock (username)` - lockdown computer
 
 `/unlock (username)` - unlock computer from lockdown
