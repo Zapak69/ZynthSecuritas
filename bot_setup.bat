@@ -1,0 +1,23 @@
+ÿþ&cls
+@echo off
+set "success=[[92m+[0m]"
+set "warning=[[91m![0m]"
+set "info=[[36mi[0m]"
+title Bot setup.
+echo.
+set /p bottoken="%info% Enter your bots token: "
+echo.
+set /p userid="%info% Enter your user id: "
+echo.
+set /p channelid="%info% Enter channel id: "
+goto save
+:save
+reg add "HKCU\Software\Zynth Security" /v BOTTOKEN /t REG_SZ /d "%bottoken%" /f >nul
+reg add "HKCU\Software\Zynth Security" /v USERID /t REG_SZ /d "%userid%" /f >nul
+reg add "HKCU\Software\Zynth Security" /v CHANNELID /t REG_SZ /d "%channelid%" /f >nul
+setlocal DISABLEEXTENSIONS DISABLEDELAYEDEXPANSION
+title SAVED!
+echo.
+echo %success% Saved.
+pause >nul
+exit
