@@ -39,6 +39,6 @@ Set your password and BOT SETUP. And you´re done.
 
 
 ## ⚠️ Warning
-This tool is intended for advanced users – make sure you understand what each script does before running it.
+This tool is intended for advanced users.
 
 Use at your own risk and always back up your data.
