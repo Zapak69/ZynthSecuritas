@@ -8,9 +8,13 @@ Once installed, ZynthSecuritas runs at system startup and sends a notification t
 
 Command list:
 `/lock (username)` - lockdown computer
+
 `/unlock (username)` - unlock computer from lockdown
+
 `/screenshot (username)` - take screenshot
+
 `/live (username)` - start live stream (BETA, may not work)
+
 `/shutdown (username)` - shutdown computer
 
 ## 🛠️ Installation
