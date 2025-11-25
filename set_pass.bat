@@ -1,0 +1,127 @@
+ÿþ&cls
+@echo off
+set "success=[[92m+[0m]"
+set "warning=[[91m![0m]"
+set "info=[[36mi[0m]"
+setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
+(set CHAR[a]=UDFM45) & (set CHAR[b]=H21DGF) & (set CHAR[c]=FDH56D) & (set CHAR[d]=FGS546) & (set CHAR[e]=JUK4JH)
+(set CHAR[f]=ERG54S) & (set CHAR[g]=T5H4FD) & (set CHAR[h]=RG641G) & (set CHAR[i]=RG4F4D) & (set CHAR[j]=RT56F6)
+(set CHAR[k]=VCBC3B) & (set CHAR[l]=F8G9GF) & (set CHAR[m]=FD4CJS) & (set CHAR[n]=G423FG) & (set CHAR[o]=F45GC2)
+(set CHAR[p]=TH5DF5) & (set CHAR[q]=CV4F6R) & (set CHAR[r]=XF64TS) & (set CHAR[s]=X78DGT) & (set CHAR[t]=TH74SJ)
+(set CHAR[u]=BCX6DF) & (set CHAR[v]=FG65SD) & (set CHAR[w]=4KL45D) & (set CHAR[x]=GFH3F2) & (set CHAR[y]=GH56GF)
+(set CHAR[z]=45T1FG) & (set CHAR[1]=D4G23D) & (set CHAR[2]=GB56FG) & (set CHAR[3]=SF45GF) & (set CHAR[4]=P4FF12)
+(set CHAR[5]=F6DFG1) & (set CHAR[6]=56FG4G) & (set CHAR[7]=USGFDG) & (set CHAR[8]=FKHFDG) & (set CHAR[9]=IFGJH6)
+(set CHAR[0]=87H8G7) & (set CHAR[@]=G25GHF) & (set CHAR[#]=45FGFH) & (set CHAR[$]=75FG45) & (set CHAR[*]=54GDH5)
+(set CHAR[(]=45F465) & (set CHAR[.]=HG56FG) & (set CHAR[,]=DF56H4) & (set CHAR[-]=F5JHFH) & (set CHAR[ ]=SGF4HF)
+(set CHAR[\]=45GH45) & (set CHAR[/]=56H45G)
+(set CHAR[UDFM45]=a) & (set CHAR[H21DGF]=b) & (set CHAR[FDH56D]=c) & (set CHAR[FGS546]=d) & (set CHAR[JUK4JH]=e)
+(set CHAR[ERG54S]=f) & (set CHAR[T5H4FD]=g) & (set CHAR[RG641G]=h) & (set CHAR[RG4F4D]=i) & (set CHAR[RT56F6]=j)
+(set CHAR[VCBC3B]=k) & (set CHAR[F8G9GF]=l) & (set CHAR[FD4CJS]=m) & (set CHAR[G423FG]=n) & (set CHAR[F45GC2]=o)
+(set CHAR[TH5DF5]=p) & (set CHAR[CV4F6R]=q) & (set CHAR[XF64TS]=r) & (set CHAR[X78DGT]=s) & (set CHAR[TH74SJ]=t)
+(set CHAR[BCX6DF]=u) & (set CHAR[FG65SD]=v) & (set CHAR[4KL45D]=w) & (set CHAR[GFH3F2]=x) & (set CHAR[GH56GF]=y)
+(set CHAR[45T1FG]=z) & (set CHAR[D4G23D]=1) & (set CHAR[GB56FG]=2) & (set CHAR[SF45GF]=3) & (set CHAR[P4FF12]=4)
+(set CHAR[F6DFG1]=5) & (set CHAR[56FG4G]=6) & (set CHAR[USGFDG]=7) & (set CHAR[FKHFDG]=8) & (set CHAR[IFGJH6]=9)
+(set CHAR[87H8G7]=0) & (set CHAR[G25GHF]=@) & (set CHAR[45FGFH]=#) & (set CHAR[75FG45]=$) & (set CHAR[54GDH5]=*)
+(set CHAR[45F465]=() & (set CHAR[HG56FG]=.) & (set CHAR[DF56H4]=,) & (set CHAR[F5JHFH]=-) & (set CHAR[SGF4HF]= )
+(set CHAR[45GH45]=\) & (set CHAR[56H45G]=/)
+reg query "HKCU\Software\Zynth Security" /v Token >nul 2>&1
+if %errorlevel%==0 (
+    goto menu2
+) else (
+    goto firststart
+)
+:firststart
+set "method=first"
+title Password creation.
+cls
+echo.
+set /p pass="%info% Create your password: "
+echo.
+set /p cpass="%info% Confirm your password: "
+if NOT "%pass%" == "%cpass%" (
+    setlocal DISABLEEXTENSIONS DISABLEDELAYEDEXPANSION
+    echo.
+    echo %warning% [91mPassword do not match![0m
+    timeout /t 2 /nobreak >nul
+    goto firststart
+)
+goto encrypt
+:menu2
+set "method=change"
+title Change password
+call :load
+cls
+echo.
+set /p pass="%info% Enter old password: "
+set "Decrypt=%TOKEN%"
+call :decryption
+echo.
+set /p pass="%info% Enter new password: "
+echo.
+set /p cpass="%info% Confirm new password: "
+if NOT "%pass%" == "%cpass%" (
+    setlocal DISABLEEXTENSIONS DISABLEDELAYEDEXPANSION
+    echo.
+    echo %warning% [91mPassword do not match![0m
+    timeout /t 2 /nobreak >nul
+    goto menu2
+)
+set "method=change2"
+goto encrypt
+:encrypt
+title Encryption...
+set savefile=off
+set Encrypt2=%pass%
+set "EncryptOut="
+:encrypt2
+set char=%Encrypt2:~0,1%
+set Encrypt2=%Encrypt2:~1%
+set EncryptOut=%EncryptOut%!CHAR[%char%]!
+if not "%Encrypt2%"=="" goto encrypt2
+set string=%EncryptOut%
+set temp_str=%string%
+set str_len=0
+title Checking encryption...
+set "save=true"
+set "Decrypt=%EncryptOut%"
+goto decryption
+:decryption
+set "Decrypt2=%Decrypt%"
+set "DecryptOut="
+:decrypt2
+set char=%Decrypt2:~0,6%
+set Decrypt2=%Decrypt2:~6%
+set DecryptOut=%DecryptOut%!CHAR[%char%]!
+if not "%Decrypt2%"=="" goto decrypt2
+if "%method%" == "first" if NOT "%DecryptOut%" == "%pass%" (
+    setlocal DISABLEEXTENSIONS DISABLEDELAYEDEXPANSION
+    cls
+    echo.
+    echo %warning% Error while 2fa decryption.
+    pause >nul
+    exit
+)
+if "%method%" == "change" if NOT "%DecryptOut%" == "%pass%" (
+    setlocal DISABLEEXTENSIONS DISABLEDELAYEDEXPANSION
+    cls
+    echo.
+    echo %warning% Wrong password!
+    pause >nul
+    exit
+)
+if "%save%" == "true" goto savetoken
+exit /b 0
+:savetoken
+set "TOKEN=%EncryptOut%"
+reg add "HKCU\Software\Zynth Security" /v Token /t REG_SZ /d "%TOKEN%" /f >nul
+setlocal DISABLEEXTENSIONS DISABLEDELAYEDEXPANSION
+title SAVED!
+echo.
+echo %success% Secret token saved.
+pause >nul
+exit
+:load
+for /f "tokens=2,*" %%A in ('reg query "HKCU\Software\Zynth Security" /v Token 2^>nul') do (
+    set "TOKEN=%%B"
+)
+exit /b 0
